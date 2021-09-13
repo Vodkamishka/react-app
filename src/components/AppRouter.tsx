@@ -7,7 +7,8 @@ const AppRouter = () => {
     const {isAuth} = useTypedSelector(state  => state.auth)
 
     return (
-        isAuth
+        <>
+        {isAuth
             ?
             <Switch>
                 {privateRoutes.map(route =>
@@ -29,7 +30,8 @@ const AppRouter = () => {
                     />
                 )}
                 <Redirect to={RouteNames.LOGIN}/>
-            </Switch>
+            </Switch>}
+            </>
     );
 };
 
